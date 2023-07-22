@@ -1,0 +1,296 @@
+@use "./mixins" as M;
+@use "./colores" as C;
+@use "./fonts" as F;
+
+.Main {
+  font-family: F.$f-fontFamily;
+  & .section {
+    & .article1 {
+      @include M.Display(flex, column, none, none);
+
+      & .header {
+        @include M.Display(flex, column, center, center);
+
+        & :first-child {
+          color: C.$c-DarkGrayishBlue;
+        }
+
+        & :last-child {
+          color: C.$c-grayishBlue;
+          text-align: center;
+          width: 450px;
+          margin: 0.5rem 0 2rem 0;
+          max-width: 500px;
+          line-height: 1.5rem;
+        }
+      }
+
+      & .main {
+        @include M.Display(flex, row, none, none);
+
+        & picture {
+          width: 100%;
+
+          & img {
+            width: 100%;
+          }
+        }
+
+        & section {
+          @include M.Display(flex, column, space-evenly, none);
+          width: 100%;
+
+          & article {
+            padding: 0 5rem;
+
+            & h3 {
+              color: C.$c-DarkGrayishBlue;
+            }
+
+            & p {
+              line-height: 1.5rem;
+              color: C.$c-grayishBlue;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .section {
+    margin-top: 5rem;
+    & .article2 {
+      @include M.Display(flex, column, none, center);
+
+      & header {
+        @include M.Display(flex, column, none, center);
+        text-align: center;
+
+        & :first-child {
+          color: C.$c-DarkGrayishBlue;
+        }
+
+        & :last-child {
+          color: C.$c-grayishBlue;
+          text-align: center;
+          width: 450px;
+          margin: 0.5rem 0 2rem 0;
+          max-width: 500px;
+          line-height: 1.5rem;
+        }
+      }
+
+      & picture {
+        width: 700px;
+        & img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  & .section {
+    & .article3 {
+      @include M.Display(flex, column, none, none);
+
+      & header {
+        @include M.Display(flex, column, none, center);
+        text-align: center;
+
+        & :first-child {
+          color: C.$c-DarkGrayishBlue;
+        }
+
+        & :last-child {
+          color: C.$c-grayishBlue;
+          text-align: center;
+          width: 450px;
+          margin: 0.5rem 0 2rem 0;
+          max-width: 500px;
+          line-height: 1.5rem;
+        }
+      }
+
+      & main {
+        @include M.Display(flex, row, none, center);
+
+        & article {
+          @include M.Display(flex, column, none, none);
+          text-align: center;
+          margin: 1rem 2rem;
+          width: 33%;
+
+          & h3 {
+            color: C.$c-DarkGrayishBlue;
+            margin: 2px;
+          }
+
+          & figure {
+            margin: 30px;
+          }
+
+          & p {
+            color: C.$c-grayishBlue;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .Main {
+    font-family: F.$f-fontFamily;
+    & .section {
+      font-size: 12px;
+      margin: 1rem;
+      & .article1 {
+        @include M.Display(flex, column, none, none);
+
+        & .header {
+          @include M.Display(flex, column, center, center);
+
+          & :first-child {
+            font-size: 16px;
+            color: C.$c-DarkGrayishBlue;
+          }
+
+          & :last-child {
+            font-size: 12px;
+            color: C.$c-grayishBlue;
+            text-align: center;
+            width: 200px;
+            margin: 0.5rem 0 2rem 0;
+            max-width: 300px;
+            line-height: 1rem;
+          }
+        }
+
+        & .main {
+          @include M.Display(block, column, none, none);
+
+          & picture {
+            width: 100%;
+            margin-left: 40px;
+            justify-content: center;
+
+            & img {
+              width: 70%;
+            }
+          }
+
+          & section {
+            @include M.Display(block, column, space-evenly, none);
+            width: 50%;
+
+            & article {
+              width: 300px;
+              margin: 10px;
+              padding: 0 0.5rem;
+              text-align: center;
+
+              & h3 {
+                font-size: 16px;
+                color: C.$c-DarkGrayishBlue;
+              }
+
+              & p {
+                font-size: 12px;
+                line-height: 1.5rem;
+                color: C.$c-grayishBlue;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & .section {
+      margin-top: 2rem;
+      & .article2 {
+        @include M.Display(flex, column, none, center);
+
+        & header {
+          @include M.Display(flex, column, none, center);
+          text-align: center;
+
+          & :first-child {
+            font-size: 16px;
+            color: C.$c-DarkGrayishBlue;
+          }
+
+          & :last-child {
+            font-size: 12px;
+            color: C.$c-grayishBlue;
+            text-align: center;
+            width: 200px;
+            margin: 0.5rem 0 2rem 0;
+            max-width: 500px;
+            line-height: 1.5rem;
+          }
+        }
+
+        & picture {
+          width: 200px;
+          & img {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    & .section {
+      & .article3 {
+        @include M.Display(flex, column, none, none);
+        width: 100%;
+        height: auto;
+
+        & header {
+          @include M.Display(flex, column, none, center);
+          text-align: center;
+          margin-left: 20px;
+
+          & :first-child {
+            font-size: 16px;
+            color: C.$c-DarkGrayishBlue;
+          }
+
+          & :last-child {
+            color: C.$c-grayishBlue;
+            text-align: center;
+            width: 100px;
+            margin: 0.5rem 0 2rem 0;
+            max-width: 100px;
+            line-height: 1.5rem;
+          }
+        }
+
+        & main {
+          @include M.Display(block, row, none, center);
+
+          & article {
+            @include M.Display(block, column, none, none);
+            text-align: center;
+            width: 50%;
+            margin-left: 100px;
+
+            & h3 {
+              color: C.$c-DarkGrayishBlue;
+              margin: 2px;
+              font-size: 16px;
+            }
+
+            & figure {
+              margin: 10px;
+            }
+
+            & p {
+              color: C.$c-grayishBlue;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

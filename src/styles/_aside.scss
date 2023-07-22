@@ -1,0 +1,121 @@
+@use "./mixins" as M;
+@use "./colores" as C;
+
+.aside {
+  @include M.Display(flex, column, none, center);
+
+  & figure {
+    @include M.Display(flex, row, none, center);
+    margin: 4rem;
+
+    & img {
+      margin: 2rem;
+      width: 120px;
+    }
+  }
+
+  & header {
+    @include M.Display(flex, column, none, center);
+
+    & :first-child {
+      color: C.$c-DarkGrayishBlue;
+    }
+
+    & :last-child {
+      color: C.$c-grayishBlue;
+      text-align: center;
+      width: 450px;
+      margin: 0.5rem 0 2rem 0;
+      max-width: 500px;
+      line-height: 1.5rem;
+    }
+  }
+
+  & ul {
+    @include M.Display(flex, row, center, none);
+    width: 1000px;
+    list-style: none;
+
+    & :first-child {
+      background-color: C.$c-lightGreen;
+      color: C.$c-white;
+      box-shadow: 1px 1px 3px C.$c-black;
+      border-radius: 2rem;
+      padding: 0.5rem 2rem;
+      margin: 0 1rem;
+    }
+
+    & :last-child {
+      background-color: C.$c-lightBlue;
+      color: C.$c-white;
+      box-shadow: 1px 1px 3px C.$c-black;
+      border-radius: 2rem;
+      padding: 0.5rem 2rem;
+      margin: 0 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .aside {
+    @include M.Display(flex, column, none, center);
+
+    & figure {
+      @include M.Display(block, column, none, center);
+      margin: 1rem;
+      width: 50px;
+
+      & img {
+        margin-left: 1px;
+        width: 80px;
+      }
+    }
+
+    & header {
+      @include M.Display(flex, column, none, center);
+
+      & :first-child {
+        font-size: 16px;
+        color: C.$c-DarkGrayishBlue;
+      }
+
+      & :last-child {
+        font-size: 12px;
+        color: C.$c-grayishBlue;
+        text-align: center;
+        width: 200px;
+        margin: 0.5rem 0 2rem 0;
+        max-width: 500px;
+        line-height: 1.5rem;
+      }
+    }
+
+    & ul {
+      @include M.Display(block, column, center, none);
+      width: 50%;
+      list-style: none;
+
+      & :first-child {
+        background-color: C.$c-lightGreen;
+        color: C.$c-white;
+        box-shadow: 1px 1px 3px C.$c-black;
+        border-radius: 2rem;
+        padding: 0.5rem 2rem;
+        margin: 20px 1px;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      & :last-child {
+        background-color: C.$c-lightBlue;
+        color: C.$c-white;
+        box-shadow: 1px 1px 3px C.$c-black;
+        border-radius: 2rem;
+        padding: 0.5rem 2rem;
+        margin: 20px 1px;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+}

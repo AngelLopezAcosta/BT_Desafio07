@@ -1,0 +1,122 @@
+@use "./colores" as C;
+@use "./mixins" as M;
+@use "./fonts" as F;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Header {
+  @include M.Display(flex, column, 0, center);
+
+  font-family: F.$f-fontFamily;
+  background-image: url(/public/images/bg-header-desktop.png);
+  background-size: cover;
+
+  & h1 {
+    font-size: 32px;
+    color: hsl(210, 10%, 33%);
+    text-align: center;
+  }
+
+  & picture {
+    margin-bottom: 2rem;
+    & img {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  & p {
+    color: C.$c-grayishBlue;
+    text-align: center;
+    width: 450px;
+    margin: 0.5rem 0 2rem 0;
+    line-height: 1.5rem;
+  }
+
+  & ul {
+    @include M.Display(flex, row, center, center);
+    width: 1000px;
+    list-style: none;
+    & :first-child {
+      background-color: C.$c-lightGreen;
+      color: C.$c-white;
+      box-shadow: 1px 1px 3px C.$c-black;
+      border-radius: 2rem;
+      padding: 0.5rem 2rem;
+      margin: 0 1rem;
+    }
+
+    & :last-child {
+      background-color: C.$c-lightBlue;
+      color: C.$c-white;
+      box-shadow: 1px 1px 3px C.$c-black;
+      border-radius: 2rem;
+      padding: 0.5rem 2rem;
+      margin: 0 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .Header {
+    @include M.Display(flex, column, 0, center);
+
+    font-family: F.$f-fontFamily;
+    font-size: 16px;
+    background-image: url(/public/images/bg-header-desktop.png);
+    background-size: cover;
+
+    & h1 {
+      font-size: 16px;
+      color: hsl(210, 10%, 33%);
+      text-align: center;
+    }
+
+    & picture {
+      margin-bottom: 0.5rem;
+      & img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    & p {
+      color: C.$c-grayishBlue;
+      text-align: center;
+      width: 200px;
+      margin: 0.5rem 0 2rem 0;
+      line-height: 1rem;
+      font-size: 12px;
+    }
+
+    & ul {
+      @include M.Display(block, column, center, center);
+      width: 50%;
+      list-style: none;
+      & :first-child {
+        background-color: C.$c-lightGreen;
+        color: C.$c-white;
+        box-shadow: 1px 1px 3px C.$c-black;
+        border-radius: 2rem;
+        padding: 0.5rem 2rem;
+        margin: 20px 1px;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      & :last-child {
+        background-color: C.$c-lightBlue;
+        color: C.$c-white;
+        box-shadow: 1px 1px 3px C.$c-black;
+        border-radius: 2rem;
+        padding: 0.5rem 2rem;
+        margin: 20px 1px;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+}
